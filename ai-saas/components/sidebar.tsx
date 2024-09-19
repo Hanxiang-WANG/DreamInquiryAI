@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 
 import { cn } from "@/lib/utils";
-import { ImageIcon, LayoutDashboard, MessageSquare, VideoIcon } from "lucide-react";
+import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
 
 const monsterrat = Montserrat({ weight: "600", subsets: ["latin"] });
 
@@ -19,20 +19,37 @@ const routes = [
     {
         label: "Conversation",
         icon: MessageSquare,
-        href: "/dashboard",
+        href: "/conversation",
         color: "text-violet-500",
     },
     {
         label: "Image Generation",
         icon: ImageIcon,
-        href: "/dashboard",
+        href: "/image",
         color: "text-pink-700",
     },
     {
         label: "Video Generation",
         icon: VideoIcon,
-        href: "/dashboard",
+        href: "/video",
         color: "text-orange-700",
+    },
+    {
+        label: "Music Generation",
+        icon: Music,
+        href: "/music",
+        color: "text-emerald-500",
+    },
+    {
+        label: "Code Generation",
+        icon: Code,
+        href: "/code",
+        color: "text-green-700",
+    },
+    {
+        label: "Settings",
+        icon: Settings,
+        href: "/settings",
     },
 ];
 
