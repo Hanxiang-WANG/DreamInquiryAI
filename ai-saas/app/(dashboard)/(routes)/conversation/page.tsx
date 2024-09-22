@@ -23,7 +23,13 @@ const ConversationPage = () => {
     const isLoading = form.formState.isSubmitting;
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values);
+        try {
+            
+        } catch (error: any) {
+            console.log(error);
+        } finally {
+            
+        }
     };
 
 
