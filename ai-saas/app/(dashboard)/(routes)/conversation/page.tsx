@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { Empty } from "@/components/empty";
+import { Loader } from "@/components/loaded";
 
 interface Message {
     role: 'user' | 'assistant';
@@ -94,8 +95,13 @@ const ConversationPage = () => {
                 </Form>
             </div>
             <div className="space-y-4 mt-4">
+                {isLoading && (
+                    <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+                        <Loader />
+                    </div>
+                )}
                 {messages.length === 0 && !isLoading && (
-                    <Empty />
+                    <Empty label='No Conversation Started.' />
                 )}
                 <div className="flex flex-col-reverse gap-y-4">
                     {messages.map((message) => (
