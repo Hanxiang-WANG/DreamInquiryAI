@@ -16,6 +16,8 @@ import axios from "axios";
 import { Empty } from "@/components/empty";
 import { Loader } from "@/components/loaded";
 import { cn } from "@/lib/utils";
+import { UserAvatar } from "@/components/user-avatar";
+import { BotAvatar } from "@/components/bot-avatar";
 
 interface Message {
     role: 'user' | 'assistant';
@@ -111,7 +113,11 @@ const ConversationPage = () => {
                             className={cn("p-8 wifull flex items-start gap-x-8 rounded-lg", 
                             message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}
                         >
-                            {message.content}
+                            {message.role === "user" ? <UserAvatar/> : <BotAvatar/>}
+                            <p className="text-sm">
+                              {message.content}
+                            </p>
+                            
                         </div>
                     ))}
                 </div>
